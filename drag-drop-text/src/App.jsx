@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
 import "./App.css";
 
+const liveApi = 'https://backend-ielts-1984.onrender.com/api/question'
+
 const App = () => {
   const [filledWords, setFilledWords] = useState();
   const [isCorrect, setIsCorrect] = useState(null);
@@ -9,7 +11,7 @@ const App = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetch("http://localhost:3000/api/question");
+      const response = await fetch(liveApi);
       const data = await response.json();
       if (data.success) {
         setData(data.data.question);
