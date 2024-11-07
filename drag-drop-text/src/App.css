@@ -1,22 +1,36 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.App {
+  text-align: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.blank {
+  display: inline-block;
+  width: 50px;
+  height: 20px;
+  border-bottom: 2px solid black;
+  margin: 0 5px;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+.words {
+  margin-top: 20px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+
+.draggable-word {
+  display: inline-block;
+  padding: 5px 10px;
+  margin: 0 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+
+button {
+  padding: 10px 20px;
+  margin-top: 15px;
 }
+
 
 @keyframes logo-spin {
   from {
