@@ -98,3 +98,21 @@ button:hover {
 .read-the-docs {
   color: #888;
 }
+
+@media (max-width: 600px) {
+  .App {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .draggable-word {
+    padding: 4px 8px;
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 14px;
+    padding: 8px 0;
+  }
+}
