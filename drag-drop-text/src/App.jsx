@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Draggable from "react-draggable";
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import "./App.css";
 
 const liveApi = 'https://backend-ielts-1984.onrender.com/api/question'
@@ -30,8 +32,16 @@ const App = () => {
       const isAllCorrect = questionData.blanks.every(
         (blank) => filledWords[blank.id] === blank.correctAnswer
       );
+      // console.log(isAllCorrect);
+      if(isAllCorrect) {
+        // alert('Correct answer')
+        toast.success('Correct answer')
+      } else {
+        // alert('Incorrect answer, Please try again')
+        toast.error('Incorrect answer, Please try again')
+      }
       setIsCorrect(isAllCorrect);
-    }
+    }``
   };
 
   const handleDrop = (blankId, word) => {
@@ -109,9 +119,10 @@ const App = () => {
       </div>
 
       <button onClick={checkAnswer}>Submit</button>
-      {isCorrect !== null && (
+      {/* {isCorrect !== null && (
         <p>{isCorrect ? "Correct answer!" : "Incorrect answer. Try again."}</p>
-      )}
+      )} */}
+      <ToastContainer/>
     </div>
   );
 };
